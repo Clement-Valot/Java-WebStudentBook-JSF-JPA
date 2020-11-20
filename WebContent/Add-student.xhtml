@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+	  xmlns:h="http://xmlns.jcp.org/jsf/html" 
+	  xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+	<head>
+	  <title><ui:insert name="title">Add Student</ui:insert></title>
+	</head>
+	
+	<body>
+		<h:form>
+			<div id="wrapper">
+				<div id="header">
+					<h2>New Student</h2>
+			    </div>
+			</div>
+			<div id="container"> 
+				<div id="content">
+					<table>
+						<tr>
+							<td>First name :</td>
+							<td> 
+								<h:inputText id="first_name" value="#{student.first_Name}" 
+								required="true" requiredMessage="Fill the first name please"
+								validatorMessage="First name should be between 2 and 45 characters"> 
+								<f:validateLength minimum="2" maximum="45"/>
+								</h:inputText>
+							</td>
+							<td> <h:message for="first_name" style="color:red"/> </td>
+						</tr>
+						
+						<tr>
+							<td>Last name :</td>
+							<td> 
+								<h:inputText id="last_name" value="#{student.last_Name}"
+								required="true" requiredMessage="Fill the last name please"
+								validatorMessage="Last name should be between 2 and 45 characters">
+								<f:validateLength minimum="2" maximum="45"/>
+								</h:inputText>  
+							</td>
+							<td> <h:message for="last_name" style="color:red"/> </td>
+						</tr>
+						
+						<tr>
+							<td>Email :</td>
+							<td> 
+								<h:inputText id="email" value="#{student.email}"
+								required="true" requiredMessage="Please enter your email address."
+								validator="#{studentManager.validateEmail}"/>
+							</td>
+							<td> <h:message for="email" style="color:red"/> </td>
+						</tr>
+						<tr>
+							<td> <h:commandButton action="#{studentManager.addStudent(student)}" value="Save" /> </td>
+							<td> <h:commandButton action="List-students" value="Cancel" immediate="true"/> </td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</h:form>
+	</body>
+
+</html>
