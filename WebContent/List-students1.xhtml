@@ -6,7 +6,7 @@
 	  xmlns:f="http://xmlns.jcp.org/jsf/core">
 	  
 	<f:metadata>
-		<f:event type="preRenderView" listener="#{studentManager.loadStudents()}"/> 
+		<f:event type="preRenderView" listener="#{studentManager1.loadStudents()}"/> 
 	</f:metadata>
 	
 	<h:head>
@@ -17,13 +17,13 @@
 		<h:outputStylesheet library="css" name="style.css"/> 
 		<div id="wrapper">
 			<div id="header">
-				<h2>List of Students JSF</h2>
+				<h2>List of Students JPA</h2>
 		    </div>
 		</div>
 		<div id="container"> 
 			<div id="content">
 				<h:form>
-					<h:dataTable border="1" value="#{studentManager.list_students}" var="tempStudent">
+					<h:dataTable border="1" value="#{studentManager1.list_students}" var="tempStudent">
 						<h:column>
 						        <f:facet name="header">ID</f:facet>
 						        #{tempStudent.id}
@@ -42,12 +42,12 @@
 						</h:column>
 						<h:column>
 						    	<f:facet name="header">Action</f:facet>
-						    		<h:commandButton action="#{studentManager.loadStudent(tempStudent.id)}" value="Edit"></h:commandButton>
-						    		<h:commandButton action="#{studentManager.deleteStudent(tempStudent.id)}" value="Delete"></h:commandButton>
+						    		<h:commandButton action="#{studentManager1.loadStudent(tempStudent.id)}" value="Edit"></h:commandButton>
+						    		<h:commandButton action="#{studentManager1.deleteStudent(tempStudent.id)}" value="Delete"></h:commandButton>
 						</h:column>
 					</h:dataTable>
 					<br/>
-					<h:commandButton action="Add-student" value="Add new student"></h:commandButton>
+					<h:commandButton action="Add-student1" value="Add new student"></h:commandButton>
 				</h:form>
 			</div>
 		</div>

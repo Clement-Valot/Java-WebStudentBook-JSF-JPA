@@ -14,7 +14,7 @@
 		<h:form>
 			<div id="wrapper">
 				<div id="header">
-					<h2>Edit Student JSF</h2>
+					<h2>Edit Student JPA</h2>
 			    </div>
 			</div>
 			<div id="container"> 
@@ -23,13 +23,13 @@
 						<tr>
 							<td>ID :</td>
 							<td>
-								<h:inputHidden value="#{student.id}"/> 
+								<h:inputHidden value="#{student1.id}"/> 
 							</td> 
 						</tr>
 						<tr>
 							<td>First name :</td>
 							<td> 
-								<h:inputText id="first_name" value="#{student.first_Name}" 
+								<h:inputText id="first_name" value="#{student1.first_Name}" 
 								required="true" requiredMessage="Fill the first name please"
 								validatorMessage="First name should be between 2 and 45 characters"> 
 								<f:validateLength minimum="2" maximum="45"/>
@@ -41,7 +41,7 @@
 						<tr>
 							<td>Last name :</td>
 							<td> 
-								<h:inputText id="last_name" value="#{student.last_Name}"
+								<h:inputText id="last_name" value="#{student1.last_Name}"
 								required="true" requiredMessage="Fill the last name please"
 								validatorMessage="Last name should be between 2 and 45 characters">
 								<f:validateLength minimum="2" maximum="45"/>
@@ -53,15 +53,15 @@
 						<tr>
 							<td>Email :</td>
 							<td> 
-								<h:inputText id="email" value="#{student.email}"
+								<h:inputText id="email" value="#{student1.email}"
 								required="true" requiredMessage="Please enter your email address."
-								validator="#{studentManager.validateEmail}"/>
+								validator="#{studentManager1.validateEmail}"/>
 							</td>
 							<td> <h:message for="email" style="color:red"/> </td>
 						</tr>
 						<tr>
-							<td> <h:commandButton action="#{studentManager.updateStudent(student)}" value="Save" /> </td>
-							<td> <h:commandButton action="List-students" value="Cancel" immediate="true"/> </td>
+							<td> <h:commandButton action="#{studentManager1.updateStudent(student1)}" value="Save" /> </td>
+							<td> <h:commandButton action="List-students1" value="Cancel" immediate="true"/> </td>
 						</tr>
 					</table>
 				</div>

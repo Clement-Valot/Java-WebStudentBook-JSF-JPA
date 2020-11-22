@@ -1,4 +1,4 @@
-package com.mutez.valot.web.jsf;
+package com.mutez.valot.web.jpa;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -15,48 +15,48 @@ import javax.faces.validator.ValidatorException;
 
 @ManagedBean
 @SessionScoped // Bean is created once for users's browser session. Unique for this user
-public class StudentManager {
+public class StudentManager1 {
 	
-	List<Student> list_students;
+	List<Student1> list_students;
 	
-	public List<Student> getList_students() {
+	public List<Student1> getList_students() {
 		return list_students;
 	}
 
-	public void setList_students(List<Student> list_students) {
+	public void setList_students(List<Student1> list_students) {
 		this.list_students = list_students;
 	}
 	
 	public void loadStudents() {
 		try {
-			list_students = StudentDbUtil.getStudents();
+			list_students = StudentDbUtil1.getStudents();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	public String addStudent(Student stu) {
-		StudentDbUtil.addStudent(stu);
-		return "List-students.xhtml";
+	public String addStudent(Student1 stu) {
+		StudentDbUtil1.addStudent(stu);
+		return "List-students1.xhtml";
 	}
 	
 	public String loadStudent(int id) throws SQLException {
-		Student theStudent = StudentDbUtil.fetchStudent(id);
+		Student1 theStudent = StudentDbUtil1.fetchStudent(id);
 		ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext(); 
 		Map<String, Object> RequestMap = externalContext.getRequestMap(); 
-		RequestMap.put("student", theStudent);
-		return "Edit-student.xhtml";
+		RequestMap.put("student1", theStudent);
+		return "Edit-student1.xhtml";
 	}
 	
-	public String updateStudent(Student stu) {
-		StudentDbUtil.updateStudent(stu);
-		return "List-students.xhtml";
+	public String updateStudent(Student1 stu) {
+		StudentDbUtil1.updateStudent(stu);
+		return "List-students1.xhtml";
 	}
 	
 	public String deleteStudent(int id) {
-		StudentDbUtil.deleteStudent(id);
-		return "List-students.xhtml";
+		StudentDbUtil1.deleteStudent(id);
+		return "List-students1.xhtml";
 	}
 	
 	public void validateEmail(FacesContext context, UIComponent component, Object value) throws ValidatorException{
