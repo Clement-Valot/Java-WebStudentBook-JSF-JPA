@@ -54,11 +54,4 @@ public class Student {
 	public Student() {
 		super();
 	}
-	
-	//Pas forcement utile mais c est copie coller
-	@Override
-	public String toString() {
-		return "Student [Id=" + Id + ", First_Name=" + First_Name + ", Last_Name=" + Last_Name + ", Email=" + Email
-				+ "]";
-	}
 }

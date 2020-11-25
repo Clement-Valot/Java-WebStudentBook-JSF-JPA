@@ -49,30 +49,4 @@ public class Student1 {
 	public void setEmail(String email) {
 		Email = email;
 	}
-	
-	/*public Student1(String first_Name, String last_Name, String email) {
-		super();
-		First_Name = first_Name;
-		Last_Name = last_Name;
-		Email = email;
-	}
-	
-	public Student1(int id, String first_Name, String last_Name, String email) {
-		super();
-		Id = id;
-		First_Name = first_Name;
-		Last_Name = last_Name;
-		Email = email;
-	}
-	
-	public Student1() {
-		super();
-	}*/
-	
-	//Pas forcement utile mais c est copie coller
-	@Override
-	public String toString() {
-		return "Student [Id=" + Id + ", First_Name=" + First_Name + ", Last_Name=" + Last_Name + ", Email=" + Email
-				+ "]";
-	}
 }
